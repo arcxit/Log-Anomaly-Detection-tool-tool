@@ -1,1 +1,1 @@
-# Log-Anomaly-Detection-tool-tool
+# Log Anomaly Detection tool
