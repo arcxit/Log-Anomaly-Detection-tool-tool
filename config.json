@@ -1,0 +1,6 @@
+{
+    "threshold": 3,
+    "output_file": "risks_report.csv",
+    "html_output_file": "risks_report.html",
+    "brute_force_window_seconds": 60
+}

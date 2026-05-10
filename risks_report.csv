@@ -1,0 +1,46 @@
+AUDIT REPORT — ACCESS LOG RISK ASSESSMENT
+Generated,2026-04-12 19:09:51
+Log File Analysed,auth.log
+Detection Threshold,3 failed attempts
+
+SUMMARY
+Total IPs Analysed,33
+Critical Risk IPs,31
+High Risk IPs,0
+Low Risk IPs,2
+
+DETAILED FINDINGS
+IP Address,Targeted Usernames,Failed Attempts,First Seen,Last Seen,Brute Force Detected,Risk Level,CIS Control Reference,Action Required
+45.33.32.156,"root, admin",37,Jan 15 00:01:12,Jan 15 21:30:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+103.21.244.0,"admin, root",24,Jan 15 00:03:45,Jan 15 19:30:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+185.220.101.45,ubuntu,16,Jan 15 00:06:22,Jan 15 06:47:26,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+222.186.134.100,"root, admin",24,Jan 15 00:08:00,Jan 15 16:30:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+91.121.87.66,postgres,7,Jan 15 00:11:33,Jan 15 04:17:26,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+5.188.206.26,oracle,13,Jan 15 00:15:00,Jan 15 04:35:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+77.247.181.163,"ubuntu, test",6,Jan 15 00:20:01,Jan 15 03:55:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+194.165.16.11,"mysql, git, root, ubuntu, admin, deploy",31,Jan 15 00:22:30,Jan 15 13:30:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+80.82.77.33,"admin, ftpuser",7,Jan 15 00:27:15,Jan 15 03:10:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+116.31.116.51,hadoop,11,Jan 15 00:33:21,Jan 15 06:17:19,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+198.199.77.211,pi,7,Jan 15 00:38:11,Jan 15 05:35:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+36.110.228.254,"admin, root",27,Jan 15 00:40:00,Jan 15 20:30:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+113.195.145.103,user,3,Jan 15 00:47:33,Jan 15 00:47:37,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+89.248.172.16,guest,4,Jan 15 00:50:00,Jan 15 00:50:06,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+123.58.182.201,root,19,Jan 15 00:55:00,Jan 15 07:02:15,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+171.25.193.78,"admin, root",35,Jan 15 01:02:11,Jan 15 17:30:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+218.92.0.113,root,30,Jan 15 01:05:00,Jan 15 23:30:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+64.62.197.160,mysql,6,Jan 15 01:12:44,Jan 15 05:17:37,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+159.203.176.20,jenkins,8,Jan 15 01:15:00,Jan 15 03:20:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+107.170.105.25,git,4,Jan 15 01:22:33,Jan 15 01:22:39,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+49.88.112.116,nginx,3,Jan 15 01:25:00,Jan 15 01:25:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+61.177.172.55,root,27,Jan 15 01:30:00,Jan 15 22:30:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+111.73.45.61,admin,3,Jan 15 01:37:22,Jan 15 01:37:26,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+142.44.215.115,postgres,7,Jan 15 01:40:00,Jan 15 06:35:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+190.2.134.4,"root, admin",23,Jan 15 01:45:00,Jan 15 18:30:04,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+46.166.148.142,webmaster,3,Jan 15 01:52:11,Jan 15 01:52:15,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+85.93.20.34,ubuntu,8,Jan 15 01:55:00,Jan 15 05:40:06,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+209.141.45.19,test,8,Jan 15 02:08:00,Jan 15 04:47:48,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+82.221.105.6,ftp,3,Jan 15 02:17:44,Jan 15 02:17:48,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+193.201.224.211,backup,3,Jan 15 02:32:15,Jan 15 02:32:19,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+62.210.180.229,nagios,3,Jan 15 03:32:44,Jan 15 03:32:48,YES,CRITICAL,Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing,Block IP immediately AUTOMATED BRUTE FORCE DETECTED
+1.2.3.4,root,1,Jan 15 10:01:00,Jan 15 10:01:00,NO,LOW,Monitor per CIS Control 6.2 - Activate Audit Logging,Monitor for further activity
+9.8.7.6,admin,1,Jan 15 10:30:00,Jan 15 10:30:00,NO,LOW,Monitor per CIS Control 6.2 - Activate Audit Logging,Monitor for further activity

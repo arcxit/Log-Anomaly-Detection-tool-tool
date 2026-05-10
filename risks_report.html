@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Access Log Risk Assessment Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .header {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+        .header p {
+            margin: 5px 0 0 0;
+            font-size: 13px;
+            color: #aaa;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .summary-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .summary-card .number {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .summary-card .label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+        }
+        .critical { color: #cc0000; }
+        .high { color: #ff6600; }
+        .low { color: #007700; }
+        .total { color: #1a1a2e; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            font-size: 13px;
+        }
+        th {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 12px 10px;
+            text-align: left;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a1a2e;
+            margin: 30px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #1a1a2e;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 11px;
+            color: #aaa;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>ACCESS LOG RISK ASSESSMENT REPORT</h1>
+        <p>Generated: 2026-04-12 19:09:51 &nbsp;|&nbsp; Log File: auth.log &nbsp;|&nbsp; Detection Threshold: 3 failed attempts</p>
+    </div>
+
+    <div class="summary-grid">
+        <div class="summary-card">
+            <div class="label">Total IPs Analysed</div>
+            <div class="number total">33</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Critical Risk</div>
+            <div class="number critical">31</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">High Risk</div>
+            <div class="number high">0</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Low Risk</div>
+            <div class="number low">2</div>
+        </div>
+    </div>
+
+    <div class="section-title">ATTACK DETAILS</div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>IP Address</th>
+                <th>Targeted Usernames</th>
+                <th>Failed Attempts</th>
+                <th>First Seen</th>
+                <th>Last Seen</th>
+                <th>Brute Force</th>
+                <th>Risk Level</th>
+                <th>CIS Control Reference</th>
+                <th>Action Required</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr style="background-color: #fff0f0;">
+            <td>45.33.32.156</td>
+            <td>root, admin</td>
+            <td style="text-align:center;">37</td>
+            <td>Jan 15 00:01:12</td>
+            <td>Jan 15 21:30:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>103.21.244.0</td>
+            <td>admin, root</td>
+            <td style="text-align:center;">24</td>
+            <td>Jan 15 00:03:45</td>
+            <td>Jan 15 19:30:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>185.220.101.45</td>
+            <td>ubuntu</td>
+            <td style="text-align:center;">16</td>
+            <td>Jan 15 00:06:22</td>
+            <td>Jan 15 06:47:26</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>222.186.134.100</td>
+            <td>root, admin</td>
+            <td style="text-align:center;">24</td>
+            <td>Jan 15 00:08:00</td>
+            <td>Jan 15 16:30:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>91.121.87.66</td>
+            <td>postgres</td>
+            <td style="text-align:center;">7</td>
+            <td>Jan 15 00:11:33</td>
+            <td>Jan 15 04:17:26</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>5.188.206.26</td>
+            <td>oracle</td>
+            <td style="text-align:center;">13</td>
+            <td>Jan 15 00:15:00</td>
+            <td>Jan 15 04:35:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>77.247.181.163</td>
+            <td>ubuntu, test</td>
+            <td style="text-align:center;">6</td>
+            <td>Jan 15 00:20:01</td>
+            <td>Jan 15 03:55:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>194.165.16.11</td>
+            <td>mysql, git, root, ubuntu, admin, deploy</td>
+            <td style="text-align:center;">31</td>
+            <td>Jan 15 00:22:30</td>
+            <td>Jan 15 13:30:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>80.82.77.33</td>
+            <td>admin, ftpuser</td>
+            <td style="text-align:center;">7</td>
+            <td>Jan 15 00:27:15</td>
+            <td>Jan 15 03:10:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>116.31.116.51</td>
+            <td>hadoop</td>
+            <td style="text-align:center;">11</td>
+            <td>Jan 15 00:33:21</td>
+            <td>Jan 15 06:17:19</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>198.199.77.211</td>
+            <td>pi</td>
+            <td style="text-align:center;">7</td>
+            <td>Jan 15 00:38:11</td>
+            <td>Jan 15 05:35:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>36.110.228.254</td>
+            <td>admin, root</td>
+            <td style="text-align:center;">27</td>
+            <td>Jan 15 00:40:00</td>
+            <td>Jan 15 20:30:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>113.195.145.103</td>
+            <td>user</td>
+            <td style="text-align:center;">3</td>
+            <td>Jan 15 00:47:33</td>
+            <td>Jan 15 00:47:37</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>89.248.172.16</td>
+            <td>guest</td>
+            <td style="text-align:center;">4</td>
+            <td>Jan 15 00:50:00</td>
+            <td>Jan 15 00:50:06</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>123.58.182.201</td>
+            <td>root</td>
+            <td style="text-align:center;">19</td>
+            <td>Jan 15 00:55:00</td>
+            <td>Jan 15 07:02:15</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>171.25.193.78</td>
+            <td>admin, root</td>
+            <td style="text-align:center;">35</td>
+            <td>Jan 15 01:02:11</td>
+            <td>Jan 15 17:30:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>218.92.0.113</td>
+            <td>root</td>
+            <td style="text-align:center;">30</td>
+            <td>Jan 15 01:05:00</td>
+            <td>Jan 15 23:30:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>64.62.197.160</td>
+            <td>mysql</td>
+            <td style="text-align:center;">6</td>
+            <td>Jan 15 01:12:44</td>
+            <td>Jan 15 05:17:37</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>159.203.176.20</td>
+            <td>jenkins</td>
+            <td style="text-align:center;">8</td>
+            <td>Jan 15 01:15:00</td>
+            <td>Jan 15 03:20:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>107.170.105.25</td>
+            <td>git</td>
+            <td style="text-align:center;">4</td>
+            <td>Jan 15 01:22:33</td>
+            <td>Jan 15 01:22:39</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>49.88.112.116</td>
+            <td>nginx</td>
+            <td style="text-align:center;">3</td>
+            <td>Jan 15 01:25:00</td>
+            <td>Jan 15 01:25:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>61.177.172.55</td>
+            <td>root</td>
+            <td style="text-align:center;">27</td>
+            <td>Jan 15 01:30:00</td>
+            <td>Jan 15 22:30:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>111.73.45.61</td>
+            <td>admin</td>
+            <td style="text-align:center;">3</td>
+            <td>Jan 15 01:37:22</td>
+            <td>Jan 15 01:37:26</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>142.44.215.115</td>
+            <td>postgres</td>
+            <td style="text-align:center;">7</td>
+            <td>Jan 15 01:40:00</td>
+            <td>Jan 15 06:35:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>190.2.134.4</td>
+            <td>root, admin</td>
+            <td style="text-align:center;">23</td>
+            <td>Jan 15 01:45:00</td>
+            <td>Jan 15 18:30:04</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>46.166.148.142</td>
+            <td>webmaster</td>
+            <td style="text-align:center;">3</td>
+            <td>Jan 15 01:52:11</td>
+            <td>Jan 15 01:52:15</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>85.93.20.34</td>
+            <td>ubuntu</td>
+            <td style="text-align:center;">8</td>
+            <td>Jan 15 01:55:00</td>
+            <td>Jan 15 05:40:06</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>209.141.45.19</td>
+            <td>test</td>
+            <td style="text-align:center;">8</td>
+            <td>Jan 15 02:08:00</td>
+            <td>Jan 15 04:47:48</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>82.221.105.6</td>
+            <td>ftp</td>
+            <td style="text-align:center;">3</td>
+            <td>Jan 15 02:17:44</td>
+            <td>Jan 15 02:17:48</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>193.201.224.211</td>
+            <td>backup</td>
+            <td style="text-align:center;">3</td>
+            <td>Jan 15 02:32:15</td>
+            <td>Jan 15 02:32:19</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #fff0f0;">
+            <td>62.210.180.229</td>
+            <td>nagios</td>
+            <td style="text-align:center;">3</td>
+            <td>Jan 15 03:32:44</td>
+            <td>Jan 15 03:32:48</td>
+            <td style="text-align:center;"> YES</td>
+            <td style="text-align:center;">
+                <span style="background:#cc0000;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    CRITICAL
+                </span>
+            </td>
+            <td style="font-size:12px;">Violates CIS Control 4.3 - Controlled Use of Admin Privileges; Possible violation of CIS Control 18.3 - Penetration Testing</td>
+            <td>Block IP immediately - automated brute force detected</td>
+        </tr>
+        
+        <tr style="background-color: #f0fff0;">
+            <td>1.2.3.4</td>
+            <td>root</td>
+            <td style="text-align:center;">1</td>
+            <td>Jan 15 10:01:00</td>
+            <td>Jan 15 10:01:00</td>
+            <td style="text-align:center;">NO</td>
+            <td style="text-align:center;">
+                <span style="background:#007700;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    LOW
+                </span>
+            </td>
+            <td style="font-size:12px;">Monitor per CIS Control 6.2 - Activate Audit Logging</td>
+            <td>Monitor for further activity</td>
+        </tr>
+        
+        <tr style="background-color: #f0fff0;">
+            <td>9.8.7.6</td>
+            <td>admin</td>
+            <td style="text-align:center;">1</td>
+            <td>Jan 15 10:30:00</td>
+            <td>Jan 15 10:30:00</td>
+            <td style="text-align:center;">NO</td>
+            <td style="text-align:center;">
+                <span style="background:#007700;color:white;padding:3px 10px;border-radius:12px;font-weight:bold;font-size:12px;">
+                    LOW
+                </span>
+            </td>
+            <td style="font-size:12px;">Monitor per CIS Control 6.2 - Activate Audit Logging</td>
+            <td>Monitor for further activity</td>
+        </tr>
+        
+        </tbody>
+    </table>
+
+
+
+</body>
+</html>
